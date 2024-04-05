@@ -1,0 +1,20 @@
+@mixin h1($_color: $titleColor) {
+    font-family: $mainFont;
+    font-size: 5rem;
+}
+
+// @mixin h2($_color: ) {}
+
+// @mixin h3($_color: ) {}
+
+// @mixin p1($_color: ) {}
+
+// @mixin p2($_color: ) {}
+
+%img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

@@ -1,0 +1,23 @@
+.logo a {
+    // border: 1px solid $white;
+    border-radius: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10rem;
+    line-height: 100%;
+    color: $titleColor;
+    font-weight: bold;
+    transform: translate(0, 20%);
+    display: block;
+    background: linear-gradient(180deg, rgba(104, 255, 255, 0.509) 0%, rgba(238, 205, 255, 0.609) 50%, rgba(255, 160, 160, 0.54) 100%);
+    background-color: rgb(224, 255, 255);
+    border: 0.2rem solid rgb(143, 0, 0);
+    border-radius: 3rem;
+    text-shadow: 2px 2px 1px rgb(143, 0, 0);
+
+    // -webkit-text-stroke: 0.1rem #fff;
+
+    &:hover {
+        text-shadow: 2px 2px 1px #af0000;
+    }
+
+}

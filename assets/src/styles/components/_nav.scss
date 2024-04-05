@@ -1,0 +1,19 @@
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item a {
+
+        padding: 0.5rem 1rem;
+        // background-color: darken($color: $bgColor, $amount: 10%);
+        // border-radius: 1rem;
+        // border: 1px solid darken($color: $bgColor, $amount: 20%);
+        color: $textColor;
+
+        &:hover {
+            // background-color: darken($color: $bgColor, $amount: 20%);
+            text-shadow: 0 0 1px $white;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.slider__controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 3rem;
+    left: calc(50% - (8rem/2));
+}
+
+.slider__dot {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: darken($color: $bgColor, $amount: 30%);
+}
