@@ -1,10 +1,12 @@
-export function flexOrderSlider(sliderId, transitionType = '0.3s linear') {
+export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interval) {
     const slider = document.querySelector(sliderId);
     const btnNext = slider.querySelector('.btn_next');
     const btnPrev = slider.querySelector('.btn_prev');
     const sliderCont = slider.querySelector('.slider__container');
     const cards = sliderCont.querySelectorAll('.card');
     let oneSlideDist = cards[0].offsetWidth;
+
+    let intervalId;
 
     // задаём текущую позицию  равной 0 - как и индекс (в массиве) первой карточки
     let currentPosition = 0;
@@ -77,13 +79,35 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear') {
         // console.log(currentPosition);
     }
 
+
     btnNext.addEventListener('click', slideToNext, { once: true });
     btnPrev.addEventListener('click', slideToPrev, { once: true });
 
+    stopAutoslideWhileBtn(btnNext);
+    stopAutoslideWhileBtn(btnPrev);
 
-    setInterval(() => {
-        slideToNext();
-    }, 5000);
+
+    autoSlide(interval);
+
+    function stopAutoslideWhileBtn(btn) {
+        btn.addEventListener('mouseenter', () => {
+            // console.log('mouseenter');
+            clearInterval(intervalId);
+        })
+        btn.addEventListener('mouseleave', () => {
+            // console.log('mouseleave');
+            autoSlide(interval);
+        })
+    }
+
+    function autoSlide(interval) {
+        if (interval <= parseFloat(transitionType) * 1000) {
+            interval = parseFloat(transitionType) * 1000 * 1.1
+        }
+        if (interval) {
+            intervalId = setInterval(() => slideToNext(), interval);
+        }
+    }
 
     // // Slide with Buttons
     // function slideWithButtons(e) {
