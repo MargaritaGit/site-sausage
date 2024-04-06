@@ -1,9 +1,9 @@
 export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interval) {
     const slider = document.querySelector(sliderId);
-    const btnNext = slider.querySelector('.btn_next');
-    const btnPrev = slider.querySelector('.btn_prev');
+    const btnNext = slider.querySelector('.slider__btn_next');
+    const btnPrev = slider.querySelector('.slider__btn_prev');
     const sliderCont = slider.querySelector('.slider__container');
-    const cards = sliderCont.querySelectorAll('.card');
+    const cards = sliderCont.querySelectorAll('.slider__card');
     let oneSlideDist = cards[0].offsetWidth;
 
     let intervalId;

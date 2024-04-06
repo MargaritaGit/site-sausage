@@ -1,16 +1,16 @@
 .slider {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
     // outline: 3px solid red;
 
     &__container-outer {
         // outline: 2px solid rgb(255, 128, 0);
         height: 100%;
         width: 100%;
+        position: relative;
 
         overflow: hidden;
 
@@ -20,6 +20,8 @@
     &__container {
         // outline: 5px solid green;
 
+        position: relative;
+
         height: 100%;
         display: flex;
         transition: 2s ease-in-out;
@@ -27,50 +29,58 @@
         // will-change: transform;
 
     }
-}
 
-.card {
-    // border: 1px solid blue;
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    position: relative;
+    &__card {
+        // border: 1px solid blue;
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        position: relative;
 
-    font-size: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        font-size: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    & img {
-        @extend %img;
+        & a {
+            cursor: pointer;
+            color: red;
+        }
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+        & img {
+            @extend %img;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     }
-}
 
 
-.slider__buttons {
-    width: 90vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
+    &__btn {
+        position: absolute;
+        transform: translate(-50%, 0);
+        padding: 1rem;
+        z-index: 10;
 
+        &:hover {
+            cursor: pointer;
+        }
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
+        &_prev {
+            top: 50%;
+            left: 5%;
+            transform: translate(0%, -50%);
 
-}
+        }
 
-.btn {
-    padding: 1rem;
-}
+        &_next {
+            top: 50%;
+            right: 5%;
+            transform: translate(0%, -50%);
 
-.btn:hover {
-    cursor: pointer;
+        }
+    }
+
 }

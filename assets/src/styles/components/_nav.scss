@@ -1,26 +1,26 @@
 .nav {
-    display: grid;
-    grid-template-columns: 1fr 25rem 1fr;
-    gap: 2rem;
+    display: none;
 
-    &-list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    @media ($tablet) {
+        display: grid;
+        grid-template-columns: 1fr 25rem 1fr;
+        gap: 2rem;
 
-        &__item a {
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            padding: 0.5rem 1rem;
-            // background-color: darken($color: $bgColor, $amount: 10%);
-            // border-radius: 1rem;
-            // border: 1px solid darken($color: $bgColor, $amount: 20%);
-            color: $textColor;
+            &__item a {
+                padding: 0.5rem 1rem;
+                color: $textColor;
 
-            &:hover {
-                // background-color: darken($color: $bgColor, $amount: 20%);
-                text-shadow: 0 0 0.05rem $white;
-                color: darken($color: $textColor, $amount: 30%);
+                &:hover {
+                    text-shadow: 0 0 0.05rem $white;
+                    color: darken($color: $textColor, $amount: 35%);
+                }
             }
         }
     }
+
 }

@@ -32,4 +32,12 @@
         }
 
     }
+
+    &_mob {
+        transform: scale(0.8);
+
+        @media ($tablet) {
+            display: none;
+        }
+    }
 }
