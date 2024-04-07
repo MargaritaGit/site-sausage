@@ -3,6 +3,16 @@
     justify-content: space-between;
     align-items: center;
     user-select: none;
+    transform: scale(0.6);
+
+    @media ($tablet) {
+        transform: scale(0.8);
+    }
+
+    @media ($laptop) {
+        transform: scale(1);
+    }
+
 
     & a {
         padding: 0.5rem 1rem;
@@ -34,9 +44,10 @@
     }
 
     &_mob {
-        transform: scale(0.8);
+        // transform: scale(0.6) translate(0, -15%);
+        // transform: scale(0.6);
 
-        @media ($tablet) {
+        @media ($laptop) {
             display: none;
         }
     }

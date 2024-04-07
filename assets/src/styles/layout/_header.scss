@@ -1,11 +1,6 @@
 .header {
-    // background: url('../../../../img/slider-main.jpg');
-    // background-color: transparent;
-    // background-image: linear-gradient(black, transparent);
-    // background: rgb(0, 0, 0);
     height: 100vh;
     min-height: 50rem;
-    // background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.5) 10%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 100%);
     position: relative;
 }
 
@@ -21,9 +16,35 @@
 
         display: flex;
         justify-content: center;
+        position: relative;
 
-        @media ($tablet) {
+        @media ($laptop) {
             display: block;
+        }
+
+
+    }
+
+    &__icon-menu {
+        width: 5rem;
+        height: 5rem;
+        background-image: url('../icons/burger-menu.svg');
+        background-size: 100%;
+        transition: 0.3s;
+
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+            filter: saturate(5);
+            transform: scale(1.1);
+        }
+
+        @media ($laptop) {
+            display: none;
         }
     }
 
