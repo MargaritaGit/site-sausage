@@ -1,13 +1,21 @@
 export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interval) {
     const slider = document.querySelector(sliderId);
+
     const btnNext = slider.querySelector('.slider__btn_next');
     const btnPrev = slider.querySelector('.slider__btn_prev');
+
     const sliderCont = slider.querySelector('.slider__container');
     const cards = sliderCont.querySelectorAll('.slider__card');
-    const dots = slider.querySelectorAll('.slider__controls_dot');
+
+    const dotsContainer = slider.querySelector('.slider__controls');
+    const dots = dotsContainer.querySelectorAll('.slider__controls_dot');
+
     let oneSlideDist = cards[0].offsetWidth;
 
+    const transitionInterval = parseFloat(transitionType) * 1000;
+
     let intervalId;
+
 
     // задаём текущую позицию  равной 0 - как и индекс (в массиве) первой карточки
     let currentPosition = 0;
@@ -82,6 +90,7 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
         updateDots();
 
         // console.log(currentPosition);
+        // console.log('slideToPrev')
     }
 
 
@@ -90,6 +99,7 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
 
     stopAutoslideWhileBtn(btnNext);
     stopAutoslideWhileBtn(btnPrev);
+    stopAutoslideWhileBtn(dotsContainer);
 
 
     autoSlide(interval);
@@ -106,13 +116,20 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
     }
 
     function autoSlide(interval) {
-        if (interval <= parseFloat(transitionType) * 1000) {
-            interval = parseFloat(transitionType) * 1000 * 1.1
+        if (interval <= transitionInterval) {
+            interval = transitionInterval * 1.1
         }
         if (interval) {
             intervalId = setInterval(() => slideToNext(), interval);
         }
     }
+
+
+    // !! Make function to generate dots dynamic
+
+    // dotsSwitch_sequentional();
+
+    dotsSwitch_Manual_OnlyFor_3();
 
     function updateDots() {
         for (let dot of dots) {
@@ -122,20 +139,78 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
         dots[currentPosition].classList.add('active');
     }
 
-    // for (let i = 0; i < dots.length; i++) {
-    //     dots[i].addEventListener('click', SlideByDots(i));
-    //     console.log(dots[i]);
+    // function dotsSwitch_withGlitch() {
+    //     dots.forEach((dot, i) => {
+    //         dot.onclick = () => {
+    //             if (i < currentPosition) {
+    //                 const tmp = currentPosition;
+    //                 for (let j = 0; j < tmp - i; j++) {
+    //                     // console.log(j)
+    //                     slideToPrev();
+    //                 }
+    //             }
+    //             if (i > currentPosition) {
+    //                 const tmp = currentPosition;
+    //                 for (let j = 0; j < i - tmp; j++) {
+    //                     // console.log(j)
+    //                     slideToNext();
+    //                 }
+    //             }
+    //         }
+    //     });
     // }
 
-    // function SlideByDots(index) {
-    //     slideToNext();
+    function dotsSwitch_sequentional() {
+        dots.forEach((dot, i) => {
+            dot.onclick = () => {
+                if (i < currentPosition) {
+                    const tmp = currentPosition;
+                    slideToPrev();
 
-    //     updateDots();
-    // }
+                    for (let j = 0; j < tmp - i - 1; j++) {
+                        setTimeout(() => slideToPrev(), transitionInterval * 1.1);
+                    }
+                }
+                if (i > currentPosition) {
+                    const tmp = currentPosition;
+                    slideToNext();
+
+                    for (let j = 0; j < i - tmp - 1; j++) {
+                        // console.log(j)
+                        setTimeout(() => slideToNext(), transitionInterval * 1.1);
+                    }
+                }
+            }
+        });
+    }
+
+    function dotsSwitch_Manual_OnlyFor_3() {
+        dots.forEach((dot, i) => {
+            dot.onclick = () => { // можно отрефакторить в цикл
+                if (i === 0 && (currentPosition === 1) ||
+                    i === 1 && (currentPosition === 2)
+                    || i === 2 && (currentPosition === 0)
+                ) {
+                    slideToPrev();
+                }
+                if (i === 1 && (currentPosition === 0) ||
+                    i === 2 && (currentPosition === 1) ||
+                    i === 0 && (currentPosition === 2)
+                ) {
+                    slideToNext();
+                }
+                // if (i === 2 && (currentPosition === 0)) {
+                //     slideToNext();
+                //     setTimeout(() => slideToNext(), transitionInterval * 1.1);
+                // }
+            }
+        });
+    }
 
 
 
-    // // Slide with Keyboard Buttons
+
+    // // Slide with Keyboard Buttons - OK
     // function slideWithButtons(e) {
     //     // console.log(e);
     //     if (e.key === 'ArrowRight') {

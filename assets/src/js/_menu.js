@@ -7,6 +7,11 @@ export function toggleMobileMenu() {
     menuIcon.onclick = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         menu.classList.toggle('nav_mob');
+
+        // запрещаем прокрутку страницы при открытии меню
+        // на iPhone всё равно можно прокрутить страницу
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
     }
 
     // отключаем моб. меню при ресайзе до десктопа
@@ -15,11 +20,6 @@ export function toggleMobileMenu() {
             menu.classList.remove('nav_mob');
         }
     })
-
-    // запрещаем прокрутку страницы при открытии меню
-    // на iPhone всё равно можно прокрутить страницу
-    document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
 
 
     // закрытие меню
