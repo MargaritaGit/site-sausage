@@ -48,13 +48,18 @@
             width: 100vw;
 
             &__item {
-                background-color: transparentize($color: green, $amount: 0.300);
+                // background-color: transparentize($color: green, $amount: 0.300);
+                background-color: transparentize($color: $bgColor, $amount: 0.6);
                 transform: translate(-100%, 0);
                 opacity: 0;
                 // анимация вылетания
                 animation: menu-link-show 0.3s forwards;
-                border-bottom: 0.1rem solid darken($color: green, $amount: 15%);
+                // border-bottom: 0.1rem solid darken($color: green, $amount: 15%);
+                border-bottom: 0.1rem solid transparentize($color: $bgColor, $amount: 0.2);
 
+                &:hover {
+                    background-color: transparentize($color: $bgColor, $amount: 0.4);
+                }
 
                 & a {
                     display: block;
@@ -64,15 +69,15 @@
 
                     &:hover {
                         text-shadow: 0 0 0.05rem $white;
-                        color: darken($color: $textColor, $amount: 35%);
+                        // color: darken($color: $textColor, $amount: 35%);
                     }
                 }
             }
         }
 
         &__icon-close-menu {
-            width: 4rem;
-            height: 4rem;
+            width: 3.5rem;
+            height: 3.5rem;
             background-image: url('../icons/cross.svg');
             background-size: 100%;
             transition: 0.3s;
@@ -84,7 +89,8 @@
 
             &:hover {
                 cursor: pointer;
-                filter: saturate(5);
+
+                filter: saturate(3);
                 transform: scale(1.1);
             }
 

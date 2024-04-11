@@ -62,16 +62,26 @@
         position: absolute;
         transform: translate(-50%, 0);
         padding: 1rem;
+        width: 5rem;
+        height: 8rem;
+        outline: none;
+        border: 0;
+        background: none;
+        background-size: 200%;
+        background-position: center;
+        background-image: url('../icons/right-arrow.svg');
+
         z-index: 1;
 
         &:hover {
             cursor: pointer;
+            filter: saturate(5);
         }
 
         &_prev {
             top: 50%;
             left: 5%;
-            transform: translate(0%, -50%);
+            transform: translate(0%, -50%) rotate(180deg);
 
         }
 
@@ -82,5 +92,40 @@
 
         }
     }
+
+    &__controls {
+        width: 10rem;
+        gap: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &_dot {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            border: 1px solid transparentize($color: $textColor, $amount: 0.4);
+            background-color: transparentize($color: $bgColor, $amount: 0.6);
+            transition: all 0.2s linear;
+
+            &:hover {
+                background-color: transparentize($color: $bgColor, $amount: 0.4);
+                cursor: pointer;
+                transition: all 0.1s linear;
+            }
+
+            &.active {
+                background-color: transparentize($color: $bgColor, $amount: 0.2);
+                transition: all 1s linear;
+
+            }
+        }
+
+
+    }
+
 
 }

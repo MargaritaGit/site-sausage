@@ -4,6 +4,7 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
     const btnPrev = slider.querySelector('.slider__btn_prev');
     const sliderCont = slider.querySelector('.slider__container');
     const cards = sliderCont.querySelectorAll('.slider__card');
+    const dots = slider.querySelectorAll('.slider__controls_dot');
     let oneSlideDist = cards[0].offsetWidth;
 
     let intervalId;
@@ -47,6 +48,8 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
             btnNext.addEventListener('click', slideToNext, { once: true });
         }, { once: true })
 
+        updateDots();
+
         // console.log(currentPosition);
     }
 
@@ -75,6 +78,8 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
                 // console.log(`.slider__container transitionend - prev`);
             }, { once: true });
         }, 0);
+
+        updateDots();
 
         // console.log(currentPosition);
     }
@@ -109,7 +114,28 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
         }
     }
 
-    // // Slide with Buttons
+    function updateDots() {
+        for (let dot of dots) {
+            dot.classList.remove('active');
+        }
+
+        dots[currentPosition].classList.add('active');
+    }
+
+    // for (let i = 0; i < dots.length; i++) {
+    //     dots[i].addEventListener('click', SlideByDots(i));
+    //     console.log(dots[i]);
+    // }
+
+    // function SlideByDots(index) {
+    //     slideToNext();
+
+    //     updateDots();
+    // }
+
+
+
+    // // Slide with Keyboard Buttons
     // function slideWithButtons(e) {
     //     // console.log(e);
     //     if (e.key === 'ArrowRight') {
