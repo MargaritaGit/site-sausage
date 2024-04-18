@@ -1,4 +1,13 @@
 .about {
+    // background-color: transparentize($color: rgb(48, 0, 0), $amount: 0.2);
+    // background: url('../img/about-3.jpg') no-repeat;
+    // background-color: transparentize($color: rgb(255, 185, 185), $amount: 0.2);
+    // background-blend-mode: color;
+    // background-color: lightcoral;
+    background-color: lighten($color: $bgColor, $amount: 50);
+
+
+
 
     &__title {
         @include h1();
@@ -19,6 +28,10 @@
         padding: 3rem 0;
     }
 
+    &__container {
+        background: url('../img/about-3.jpg') no-repeat;
+        background-size: cover;
+    }
 
     &__line {
         display: flex;
@@ -30,23 +43,35 @@
         &:nth-child(even) {
             flex-direction: row-reverse;
 
-            .about__img-cont {
-                clip-path: polygon(20rem 0, 100% 0, 100% 100%, 0 100%);
+            .about__text-cont {
+                clip-path: polygon(0 0, 100% 0, calc(100% - 20rem) 100%, 0 100%);
+                padding-left: max(calc((100% - 120rem) / 2), 2vw);
+                padding-right: 20rem;
 
             }
         }
     }
 
     &__img-cont {
-        flex-basis: calc(50% + 10rem);
-        background: url('../img/about-3.jpg');
+        flex-basis: calc(50% - 0rem);
         height: 100%;
 
-        clip-path: polygon(0 0, 100% 0, calc(100% - 20rem) 100%, 0 100%);
+        // clip-path: polygon(0 0, 100% 0, calc(100% - 20rem) 100%, 0 100%);
     }
 
     &__text-cont {
-        flex-basis: calc(50% - 10rem);
-        padding: 0 7rem;
+        clip-path: polygon(20rem 0, 100% 0, 100% 100%, 0 100%);
+        height: 100%;
+        flex-basis: calc(50% + 0rem);
+        // background-color: rgba(240, 248, 255, 0.85);
+        background-color: lighten($color: $bgColor, $amount: 50);
+        // background-color: white;
+        // background-color: transparentize($color: rgb(255, 185, 185), $amount: 0.2);
+        // background-color: transparentize($color: rgb(48, 0, 0), $amount: 0.2);
+
+        padding-right: max(calc((100% - 120rem) / 2), 2vw);
+        padding-left: 20rem;
+        display: flex;
+        align-items: center;
     }
 }

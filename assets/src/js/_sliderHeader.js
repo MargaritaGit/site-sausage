@@ -97,9 +97,13 @@ export function flexOrderSlider(sliderId, transitionType = '0.3s linear', interv
     btnNext.addEventListener('click', slideToNext, { once: true });
     btnPrev.addEventListener('click', slideToPrev, { once: true });
 
-    stopAutoslideWhileBtn(btnNext);
-    stopAutoslideWhileBtn(btnPrev);
-    stopAutoslideWhileBtn(dotsContainer);
+
+    // only for devices with Mouse. NOT touchscreens
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        stopAutoslideWhileBtn(btnNext);
+        stopAutoslideWhileBtn(btnPrev);
+        stopAutoslideWhileBtn(dotsContainer);
+    }
 
 
     autoSlide(interval);
