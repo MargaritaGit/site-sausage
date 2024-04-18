@@ -1,0 +1,52 @@
+.about {
+
+    &__title {
+        @include h1();
+        font-weight: 200;
+        text-shadow: 1px 1px 1px darken($color: $bgColor, $amount: 10%);
+        margin: 1rem;
+        text-align: center;
+    }
+
+    &__subtitle {
+        @include h2();
+        font-weight: 200;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    &__wrapper {
+        padding: 3rem 0;
+    }
+
+
+    &__line {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        height: 30rem;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .about__img-cont {
+                clip-path: polygon(20rem 0, 100% 0, 100% 100%, 0 100%);
+
+            }
+        }
+    }
+
+    &__img-cont {
+        flex-basis: calc(50% + 10rem);
+        background: url('../img/about-3.jpg');
+        height: 100%;
+
+        clip-path: polygon(0 0, 100% 0, calc(100% - 20rem) 100%, 0 100%);
+    }
+
+    &__text-cont {
+        flex-basis: calc(50% - 10rem);
+        padding: 0 7rem;
+    }
+}
