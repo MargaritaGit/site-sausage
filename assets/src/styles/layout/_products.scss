@@ -1,0 +1,52 @@
+.products {
+    color: black;
+
+    &__content {
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 3rem;
+
+        @media ($tablet) {
+            flex-direction: row;
+        }
+
+
+    }
+
+    &__line {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        @media ($tablet) {
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+
+    }
+
+    &__item {
+        width: 45rem;
+        // order: 1;
+
+        &_image {
+            height: 30rem;
+            border-radius: 4rem;
+        }
+
+        &_info2 {
+            // order: ;
+        }
+
+    }
+
+}
+
+// .about__title {
+//     margin-bottom: 3rem;
+// }
