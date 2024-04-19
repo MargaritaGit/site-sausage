@@ -29,7 +29,7 @@
     }
 
     &__container {
-        background: url('../img/about-3.jpg') no-repeat;
+        background: url('../img/about-bg.jpg') no-repeat;
         background-size: cover;
         background-position: center;
     }
@@ -83,7 +83,7 @@
         text-align: center;
 
         @media ($laptop) {
-            text-align: left;
+            // text-align: center;
             padding: 5rem 5rem;
 
             clip-path: polygon(20rem 0, 100% 0, 100% 100%, 0 100%);
@@ -97,7 +97,9 @@
             padding-right: max(calc((100% - 120rem) / 2), 2vw);
             padding-left: 20rem;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
         }
     }
 }

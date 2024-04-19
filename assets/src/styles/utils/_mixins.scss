@@ -4,14 +4,22 @@
     color: $_color;
 }
 
-@mixin h2($_color: $bgColor) {
+@mixin h2($_color: lighten($color: $bgColor, $amount: 20)) {
     font-family: $mainFont;
     font-size: 4rem;
-    color: lighten($color: $_color, $amount: 20);
-
+    color: $_color;
+    text-align: center;
+    margin: 2rem 0;
 }
 
-// @mixin h3($_color: ) {}
+@mixin h3($_color: $bgColor) {
+    font-family: $mainFont;
+    font-size: 3rem;
+    color: $_color;
+    text-align: center;
+    margin: 2rem 0;
+}
+
 
 // @mixin p1($_color: ) {}
 

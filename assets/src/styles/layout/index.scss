@@ -1,9 +1,17 @@
 @import './header';
-@import './about'; // @import './about';
+@import './about';
 @import './products';
 
 .wrapper {
     max-width: 120rem;
     width: 96%;
     margin: 0 auto;
+}
+
+h2 {
+    @include h2();
+}
+
+h3 {
+    @include h3();
 }
