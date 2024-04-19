@@ -1,6 +1,6 @@
 /**
  * 
- * @param  {...any} parents HTML elements, that are parents of tag a - i.e. links
+ * @param  {...any} parents HTML elements id, class etc., that are parents of tag a - i.e. links
  */
 export function linksJustScroll(...parents) {
     parents.forEach(el => {
