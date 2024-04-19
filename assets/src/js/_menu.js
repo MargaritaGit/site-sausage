@@ -25,10 +25,8 @@ export function toggleMobileMenu() {
     // закрытие меню
     menu.onclick = (e) => {
         // console.log(e.target);
-        if (window.innerWidth < 1024 && (
-            e.target === menu ||
-            e.target === menuCloseIcon ||
-            e.target === logo)) {
+        // if (window.innerWidth < 1024 && (e.target === menu || e.target === menuCloseIcon || e.target === logo)) {
+        if (window.innerWidth < 1024) {
             menu.classList.toggle('nav_mob');
             // возобновляем возможность прокрутки страницы при закрытии меню
             document.body.style.overflow = 'visible';

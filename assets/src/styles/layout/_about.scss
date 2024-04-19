@@ -82,6 +82,11 @@
         background-color: transparentize($color: lighten($color: $bgColor, $amount: 50), $amount: 0.4);
         text-align: center;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
         @media ($laptop) {
             // text-align: center;
             padding: 5rem 5rem;
@@ -96,10 +101,6 @@
 
             padding-right: max(calc((100% - 120rem) / 2), 2vw);
             padding-left: 20rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1rem;
         }
     }
 }
