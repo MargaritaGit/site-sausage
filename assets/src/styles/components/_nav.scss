@@ -13,11 +13,13 @@
 
             &__item a {
                 padding: 0.5rem 1rem;
-                color: $textColor;
+                color: $menuTextColor;
+                // color: $textColor;
+                // text-shadow: 0rem 0rem 0.3rem white;
 
                 &:hover {
                     text-shadow: 0 0 0.05rem $white;
-                    color: darken($color: $textColor, $amount: 35%);
+                    color: darken($color: $menuTextColor, $amount: 35%);
                 }
             }
         }
@@ -65,7 +67,7 @@
                     display: block;
                     padding: 1.5rem 1rem;
                     padding-left: 5rem;
-                    color: $textColor;
+                    color: $menuTextColor;
 
                     &:hover {
                         text-shadow: 0 0 0.05rem $white;

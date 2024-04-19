@@ -1,0 +1,103 @@
+.about {
+    // background-color: transparentize($color: rgb(48, 0, 0), $amount: 0.2);
+    // background: url('../img/about-3.jpg') no-repeat;
+    // background-color: transparentize($color: rgb(255, 185, 185), $amount: 0.2);
+    // background-blend-mode: color;
+    // background-color: lightcoral;
+    background-color: lighten($color: $bgColor, $amount: 50);
+
+
+
+
+    &__title {
+        @include h1();
+        font-weight: 200;
+        text-shadow: 1px 1px 1px darken($color: $bgColor, $amount: 10%);
+        margin: 1rem;
+        text-align: center;
+    }
+
+    &__subtitle {
+        @include h2();
+        font-weight: 200;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    &__wrapper {
+        padding: 3rem 0;
+    }
+
+    &__container {
+        background: url('../img/about-3.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__line {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @media ($laptop) {
+            height: 30rem;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .about__text-cont {
+                // clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 50%);
+                padding: 2rem 2rem 4rem;
+
+
+                @media ($laptop) {
+
+                    clip-path: polygon(0 0, 100% 0, calc(100% - 20rem) 100%, 0 100%);
+                    padding-left: max(calc((100% - 120rem) / 2), 2vw);
+                    padding-right: 20rem;
+                }
+
+            }
+        }
+    }
+
+    &__img-cont {
+        display: none;
+
+        @media ($laptop) {
+            display: block;
+            flex-basis: calc(50% - 0rem);
+            height: 100%;
+
+            // clip-path: polygon(0 0, 100% 0, calc(100% - 20rem) 100%, 0 100%);
+        }
+    }
+
+    &__text-cont {
+
+        // clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+        padding: 4rem 2rem 2rem;
+        height: 100%;
+        background-color: transparentize($color: lighten($color: $bgColor, $amount: 50), $amount: 0.4);
+        text-align: center;
+
+        @media ($laptop) {
+            text-align: left;
+            padding: 5rem 5rem;
+
+            clip-path: polygon(20rem 0, 100% 0, 100% 100%, 0 100%);
+            flex-basis: calc(50% + 0rem);
+            background-color: lighten($color: $bgColor, $amount: 50);
+            // background-color: rgba(240, 248, 255, 0.85);
+            // background-color: white;
+            // background-color: transparentize($color: rgb(255, 185, 185), $amount: 0.2);
+            // background-color: transparentize($color: rgb(48, 0, 0), $amount: 0.2);
+
+            padding-right: max(calc((100% - 120rem) / 2), 2vw);
+            padding-left: 20rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
