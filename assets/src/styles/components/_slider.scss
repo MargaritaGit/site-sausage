@@ -37,10 +37,10 @@
         flex-shrink: 0;
         position: relative;
 
-        font-size: 10rem;
         display: flex;
         align-items: center;
         justify-content: center;
+
 
         & a {
             cursor: pointer;
@@ -54,6 +54,31 @@
             top: 0;
             left: 0;
             z-index: -1;
+        }
+
+        & span {
+            color: $menuTextColor;
+            text-shadow: 1px 1px 1px darken($color: $bgColor, $amount: 10%);
+            -webkit-text-stroke: 0.15rem darken($color: $bgColor, $amount: 10%);
+            font-size: 3rem;
+            font-weight: 700;
+            font-style: italic;
+            // min-width: 35rem;
+            width: 70%;
+            text-align: center;
+
+            @media ($tablet) {
+                width: 80%;
+                font-size: 4rem;
+                text-shadow: 2px 2px 1px darken($color: $bgColor, $amount: 10%);
+                -webkit-text-stroke: 0.2rem darken($color: $bgColor, $amount: 10%);
+            }
+
+            @media ($laptop) {
+                font-size: 5rem;
+                text-shadow: 3px 3px 2px darken($color: $bgColor, $amount: 10%);
+                -webkit-text-stroke: 0.2rem darken($color: $bgColor, $amount: 10%);
+            }
         }
     }
 

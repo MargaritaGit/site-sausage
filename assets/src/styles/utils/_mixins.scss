@@ -1,10 +1,15 @@
-@mixin h1($_color: $titleColor) {
+@mixin h1($_color: $logoColor) {
     font-family: $titleFont;
-    font-size: 6rem;
+    font-size: 4rem;
     color: $_color;
+
+    @media ($tablet) {
+        font-size: 6rem;
+    }
+
 }
 
-@mixin h2($_color: lighten($color: $bgColor, $amount: 20)) {
+@mixin h2($_color: darken($color: $bgColor, $amount: 10)) {
     font-family: $mainFont;
     font-size: 4rem;
     color: $_color;
@@ -12,12 +17,20 @@
     margin: 2rem 0;
 }
 
-@mixin h3($_color: $bgColor) {
+@mixin h3($_color: darken($color: $bgColor, $amount: 8)) {
+
     font-family: $mainFont;
     font-size: 3rem;
     color: $_color;
     text-align: center;
-    margin: 2rem 0;
+    font-weight: 500;
+
+    // margin: 2rem 0;
+    @media (laptop) {
+        font-size: 3rem;
+
+    }
+
 }
 
 
