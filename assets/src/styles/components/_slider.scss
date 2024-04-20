@@ -105,16 +105,23 @@
 
         &_prev {
             top: 50%;
-            left: 5%;
+            left: 1%;
             transform: translate(0%, -50%) rotate(180deg);
+
+            @media ($tablet) {
+                left: 5%;
+            }
 
         }
 
         &_next {
             top: 50%;
-            right: 5%;
+            right: 1%;
             transform: translate(0%, -50%);
 
+            @media ($tablet) {
+                right: 5%;
+            }
         }
     }
 

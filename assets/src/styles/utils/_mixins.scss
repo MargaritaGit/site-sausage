@@ -17,10 +17,10 @@
     margin: 2rem 0;
 }
 
-@mixin h3($_color: darken($color: $bgColor, $amount: 8)) {
+@mixin h3($_color: darken($color: $bgColor, $amount: 7)) {
 
     font-family: $mainFont;
-    font-size: 3rem;
+    font-size: 2.6rem;
     color: $_color;
     text-align: center;
     font-weight: 500;
