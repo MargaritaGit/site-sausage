@@ -1,5 +1,5 @@
 .products {
-    padding-top: 4rem;
+    padding: 4rem 0;
 
     &__info {
         max-width: 80rem;
@@ -30,6 +30,7 @@
             position: static;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 3rem;
 
             &:nth-child(even) {
@@ -68,7 +69,7 @@
             transition: transform 0.25s linear;
 
             &:hover {
-                transform: scale(1.1);
+                transform: scale(1.2);
                 transition: transform 0.3s linear;
             }
 

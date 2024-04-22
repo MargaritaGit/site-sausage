@@ -1,0 +1,120 @@
+.footer {
+    // height: 40rem;
+    background-color: darken($color: $bgColor, $amount: 15);
+    padding: 5rem 0 2rem;
+    font-size: 1.7rem;
+    color: $menuTextColor;
+
+    &__wrapper {
+        // height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        & .logo-cont {
+
+            width: 20rem;
+
+            & .logo {
+                transform: scale(0.5) translate(-50%, -65%);
+                margin-bottom: calc((-11.4rem * 0.5) + 1.5rem);
+            }
+
+            & .logo__text {
+                font-size: 1.55rem;
+                color: darken($color: $menuTextColor, $amount: 10);
+            }
+        }
+
+
+        & .phone {
+
+            &__icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                margin-right: 0.3rem;
+                transform: translate(0, 0.65rem);
+                display: inline-block;
+                background: url(../icons/phone-solid.svg) no-repeat;
+
+            }
+
+            &__link {
+
+                color: $menuTextColor;
+                font-size: 2rem;
+                font-weight: 500;
+                // text-shadow: 0 0 1px $white;
+                // text-decoration: underline;
+                cursor: pointer;
+
+                // & span {
+                //     color: $white;
+                // }
+
+                &::before {
+                    content: '\f095';
+                    font-family: 'FontAwesome';
+                    font-size: 2rem;
+                }
+            }
+
+        }
+
+        & .mail {
+
+            & span {
+                display: block;
+                // font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            & a {
+                display: block;
+                color: $menuTextColor;
+                font-size: 2rem;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        & .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                // width: 60rem;
+                gap: 2.5rem;
+
+                &__item a {
+                    padding: 0;
+                    color: $menuTextColor;
+                    // color: $textColor;
+                    // text-shadow: 0rem 0rem 0.3rem white;
+
+                    &:hover {
+                        text-shadow: 0 0 0.05rem $white;
+                        color: darken($color: $menuTextColor, $amount: 25%);
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    & .copyright {
+        margin-top: 3rem;
+        font-size: 1.4;
+        color: darken($color: $menuTextColor, $amount: 10);
+        text-align: center;
+    }
+
+}
