@@ -1,33 +1,32 @@
-/**
- * 
- * @param  {...any} parents HTML elements id, class etc., that are parents of tag a - i.e. links
- */
-export function linksJustScroll(...parents) {
-    parents.forEach(el => {
 
-        let parent = document.querySelector(el);
-        // console.log(parent);
+export function linksOnPageJustScroll() {
 
-        const links = parent.querySelectorAll('a');
+    const links = document.querySelectorAll('a');
 
-        links.forEach(link => {
-            // console.log(link); console.log(link.innerHTML); console.log(link.href);
+    links.forEach(link => {
+        // console.log(link); console.log(link.innerHTML); console.log(link.href);
 
-            link.onclick = (event) => {
-                event.preventDefault();
+        link.onclick = (event) => {
+            // console.log(window.location.href); console.log(link.href);
 
-                // find out to where link leads
-                const id = link.href.slice(link.href.indexOf('#') + 1);
-                // console.log(id);
-
-                // scroll to linked element
-                document.getElementById(id).scrollIntoView(
-                    {
-                        block: "start",
-                        behavior: "smooth"
-                    });
+            if (!link.href.includes(`${window.location.href}#`)) {
+                return;
             }
-        });
 
+            event.preventDefault();
+
+            // find out to where link leads
+            const id = link.href.slice(link.href.indexOf('#') + 1);
+            // console.log(id);
+
+            // scroll to linked element
+            document.getElementById(id).scrollIntoView(
+                {
+                    block: "start",
+                    behavior: "smooth"
+                });
+        }
     });
+
+
 }
