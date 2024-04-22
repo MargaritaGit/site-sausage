@@ -1,3 +1,14 @@
+%noSelect {
+    /* Disable silecting of anything */
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 @mixin h1($_color: $logoColor) {
     font-family: $titleFont;
     font-size: 4rem;

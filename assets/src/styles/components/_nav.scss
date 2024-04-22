@@ -18,7 +18,7 @@
                 // text-shadow: 0rem 0rem 0.3rem white;
 
                 &:hover {
-                    text-shadow: 0 0 0.05rem $white;
+                    // text-shadow: 0 0 0.05rem $white;
                     color: darken($color: $menuTextColor, $amount: 25%);
                 }
             }

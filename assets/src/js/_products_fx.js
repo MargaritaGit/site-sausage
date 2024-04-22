@@ -31,7 +31,7 @@ export function productsFlyInEffect(transitionType) {
                     entry.target.classList.add('hidden');
                 }
 
-                if (entry.intersectionRatio > 0.25) {
+                if (entry.intersectionRatio > 0.2) {
                     // console.log(`remove('hidden')`);
                     entry.target.classList.remove('hidden');
                 }
@@ -46,12 +46,12 @@ export function productsFlyInEffect(transitionType) {
                 // }
 
             } else {
-                console.log(`add('hidden')`);
+                // console.log(`add('hidden')`);
                 entry.target.classList.add('hidden');
             }
         });
 
-    }, { threshold: [0, 0.15, 0.25, 0.5] });
+    }, { threshold: [0, 0.15, 0.2, 0.5] });
 
 
     // start observing lines with content
