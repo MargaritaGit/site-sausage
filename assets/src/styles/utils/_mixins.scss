@@ -22,10 +22,14 @@
 
 @mixin h2($_color: darken($color: $bgColor, $amount: 10)) {
     font-family: $mainFont;
-    font-size: 4rem;
+    font-size: 3rem;
     color: $_color;
     text-align: center;
     margin: 2rem 0;
+
+    @media ($tablet) {
+        font-size: 4rem;
+    }
 }
 
 @mixin h3($_color: darken($color: $bgColor, $amount: 7)) {

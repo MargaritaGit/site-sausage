@@ -1,4 +1,3 @@
-
 export function linksOnPageJustScroll() {
 
     const links = document.querySelectorAll('a');
@@ -20,13 +19,12 @@ export function linksOnPageJustScroll() {
             // console.log(id);
 
             // scroll to linked element
-            document.getElementById(id).scrollIntoView(
+            document.getElementById(id)?.scrollIntoView(
                 {
                     block: "start",
                     behavior: "smooth"
                 });
         }
     });
-
 
 }
