@@ -1,6 +1,10 @@
 .products {
-    padding: 4rem 0;
+    padding: 3rem 0 4rem;
     overflow: hidden;
+
+    @media ($tablet) {
+        padding: 4rem 0;
+    }
 
     &__info {
         max-width: 80rem;

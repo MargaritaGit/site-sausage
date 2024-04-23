@@ -1,3 +1,9 @@
+// создаём CSS переменные для возможности управления стилями псевдоэмента с помощью JS
+:root {
+    --screenHeight: 100vh;
+    --screenHeight: 100lvh;
+}
+
 //colors
 $logoColor: #00195e;
 $textColor: #861200;

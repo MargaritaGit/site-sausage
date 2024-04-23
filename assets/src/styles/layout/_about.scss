@@ -46,7 +46,12 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh; // для устройств, не поддерживающих lvh
+            height: var(--screenHeight);
+            height: 100lvh; // Largest Viewport Height
+            // // height: 100svh; // Smallest Viewport Height - визуальный баг - картинка не на весь экран.
+            // // transform: scale(1.22); // можно исправить, но тогда все равно видно меньшую часть излбражения чем при 100lvh; - нет смысла.
+
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
