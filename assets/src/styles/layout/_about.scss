@@ -30,11 +30,13 @@
     }
 
     &__container {
+
+
+
         // // background-attachment: fixed; - не работает на iOS - делаем через псевдоэлемент
         // background: url('../img/about-bg.jpg') no-repeat;
         // background-size: cover;
         // background-position: center;
-
         position: relative;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
@@ -67,7 +69,11 @@
         // задаём, чтобы отображалось поверх фиксированного псевдоэлемента фоном
         position: relative;
 
+
+        background-color: transparentize($color: lighten($color: $bgColor, $amount: 50), $amount: 0.4);
+
         @media ($laptop) {
+            background-color: unset;
             height: 30rem;
         }
 
@@ -107,7 +113,6 @@
         // clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
         padding: 4rem 2rem 2rem;
         height: 100%;
-        background-color: transparentize($color: lighten($color: $bgColor, $amount: 50), $amount: 0.4);
         text-align: center;
 
         display: flex;

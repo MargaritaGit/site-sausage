@@ -1,9 +1,9 @@
 .products {
-    padding: 3rem 0 4rem;
+    padding: 3rem 0 5rem;
     overflow: hidden;
 
     @media ($tablet) {
-        padding: 4rem 0;
+        padding: 4rem 0 6rem;
     }
 
     &__info {
@@ -15,17 +15,11 @@
     &__content {
         margin-top: 5rem;
         display: flex;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         flex-direction: column;
-        justify-content: space-evenly;
+        // justify-content: space-between;
         align-items: center;
         gap: 3rem;
-
-        @media ($tablet) {
-            flex-direction: row;
-        }
-
-
     }
 
     &__line {
@@ -35,13 +29,10 @@
             position: static;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
+            gap: 6rem;
 
             &:nth-child(even) {
                 flex-direction: row-reverse;
-
-
             }
         }
 

@@ -28,18 +28,9 @@
         }
 
 
-        & .phone {
+        & .social {
 
-            // &__icon {
-            //     width: 2.5rem;
-            //     height: 2.5rem;
-            //     margin-right: 0.3rem;
-            //     transform: translate(0, 0.65rem);
-            //     display: inline-block;
-            //     background: url(../icons/phone-solid.svg) no-repeat;
-            // }
-
-            &__link {
+            &__phone {
 
                 // color: $menuTextColor;
                 color: $white;
@@ -60,10 +51,18 @@
 
                 &::before {
                     content: '\f095';
-                    font-family: 'FontAwesome';
+                    font-family: 'Font Awesome 6 Free';
+                    font-weight: 700;
                     font-size: 2rem;
                     margin-right: 0.5rem;
                 }
+            }
+
+            &__vk {
+                display: block;
+                margin-top: 1.5rem;
+                color: white;
+                font-size: 3rem;
             }
 
         }
@@ -74,6 +73,20 @@
                 display: block;
                 // font-size: 2rem;
                 margin-bottom: 2.3rem;
+                position: relative;
+
+                &::after {
+                    content: '\f0e0';
+                    // font-family: 'FontAwesome'; // НЕВЕРНО - не работает font-weight. жирный конвертик
+                    font-family: 'Font Awesome 6 Free';
+                    font-size: 2.5rem;
+                    font-weight: 400;
+                    font-style: normal;
+                    // margin-left: 1.2rem;
+                    position: absolute;
+                    top: -0.5rem;
+                    left: 13rem;
+                }
             }
 
             & a {
