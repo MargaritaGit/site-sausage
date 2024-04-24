@@ -34,7 +34,7 @@ export function toggleMobileMenu() {
     }
 
     // устанавливаем задерку анимации (чтобы не писать вручную через CSS)
-    const menuItems = document.querySelectorAll('.nav-list__item');
+    const menuItems = menu.querySelectorAll('.nav-list__item');
     menuItems.forEach((menuItem, i) => {
         // console.log(menuItem);
         // console.log((0 + (i / 15)) + 's');
