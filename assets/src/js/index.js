@@ -25,9 +25,9 @@ productsFlyInEffect('transform 0.65s ease-in-out, opacity 0.65s ease-in-out');
 // productsFlyInEffect('0.7s ease-out');
 
 
-if (window.innerWidth >= 768) {
-    myRellax();
-}
+// if (window.innerWidth >= 768) {
+myRellax();
+// }
 
 
 
