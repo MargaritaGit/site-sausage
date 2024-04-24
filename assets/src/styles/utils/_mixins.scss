@@ -15,6 +15,10 @@
     color: $_color;
 
     @media ($tablet) {
+        font-size: 5rem;
+    }
+
+    @media ($laptop) {
         font-size: 6rem;
     }
 

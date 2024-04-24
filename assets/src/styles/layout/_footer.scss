@@ -6,15 +6,36 @@
     color: $menuTextColor;
 
     &__wrapper {
+
         // height: 100%;
         position: relative;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        flex-direction: column;
+        text-align: center;
+
+        @media ($tablet) {
+            text-align: left;
+            height: 15rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+
+        }
+
+        @media ($laptop) {
+            flex-direction: row;
+            align-items: flex-start;
+
+        }
 
         & .logo-cont {
 
             width: 20rem;
+            display: none;
+
+            @media ($tablet) {
+                display: block;
+            }
 
             & .logo {
                 transform: scale(0.5) translate(-50%, -65%);
@@ -42,7 +63,7 @@
                 transition: 0.2s;
 
                 &:hover {
-                    color: $menuTextColor
+                    color: darken($color: $menuTextColor, $amount: 15%);
                 }
 
                 // & span {
@@ -62,30 +83,53 @@
                 display: block;
                 margin-top: 1.5rem;
                 color: white;
-                font-size: 3rem;
+                font-size: 2.5rem;
+                margin-bottom: 2.5rem;
+
+                @media ($tablet) {
+                    margin-bottom: 0;
+
+                }
+
+                &:hover {
+                    color: darken($color: $menuTextColor, $amount: 15%);
+                }
             }
 
         }
 
         & .mail {
+            // margin: 0 auto;
 
             & span {
-                display: block;
+                display: inline-block;
                 // font-size: 2rem;
-                margin-bottom: 2.3rem;
+                margin-bottom: 1.5rem;
+                margin-left: 4rem;
                 position: relative;
+                // width: max-content;
 
-                &::after {
+
+                @media ($tablet) {
+                    margin-bottom: 2.3rem;
+                }
+
+                &::before {
                     content: '\f0e0';
                     // font-family: 'FontAwesome'; // НЕВЕРНО - не работает font-weight. жирный конвертик
                     font-family: 'Font Awesome 6 Free';
-                    font-size: 2.5rem;
+                    font-size: 3rem;
                     font-weight: 400;
                     font-style: normal;
-                    // margin-left: 1.2rem;
+                    // margin-right: 1.2rem;
                     position: absolute;
-                    top: -0.5rem;
-                    left: 13rem;
+                    top: -0.7rem;
+                    left: -4rem;
+
+                    // @media ($tablet) {
+                    //     top: -0.7rem;
+                    //     left: -4rem;
+                    // }
                 }
             }
 
@@ -97,37 +141,65 @@
                 // text-decoration: underline;
                 cursor: pointer;
                 transition: 0.2s;
+                margin-bottom: 2.5rem;
 
+
+                @media ($tablet) {
+                    margin-bottom: 0;
+                }
 
                 &:hover {
-                    color: $menuTextColor
+                    color: darken($color: $menuTextColor, $amount: 10%);
                 }
             }
         }
 
         & .nav {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
             gap: 2rem;
+            flex-direction: column;
+            // text-align: center;
+
+            @media ($laptop) {
+                flex-direction: row;
+
+            }
 
             &-list {
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: flex-start;
                 // width: 60rem;
-                gap: 2.5rem;
+                gap: 2rem;
 
-                &__item a {
-                    padding: 0;
-                    color: $menuTextColor;
-                    // color: $textColor;
-                    // text-shadow: 0rem 0rem 0.3rem white;
+                @media ($tablet) {
+                    align-items: flex-start;
 
-                    &:hover {
-                        text-shadow: 0 0 0.05rem $white;
-                        color: darken($color: $menuTextColor, $amount: 25%);
+                }
+
+                &__item {
+                    width: 15rem;
+                    border-bottom: 1px solid $menuTextColor;
+                    padding-bottom: 0.5rem;
+
+                    @media ($tablet) {
+                        width: min-content;
+                        padding-bottom: 0;
+                        border-bottom: none;
+
+                    }
+
+                    & a {
+                        padding: 0;
+                        color: $menuTextColor;
+                        // color: $textColor;
+                        // text-shadow: 0rem 0rem 0.3rem white;
+
+                        &:hover {
+                            text-shadow: 0 0 0.05rem $white;
+                            color: darken($color: $menuTextColor, $amount: 25%);
+                        }
                     }
                 }
             }
