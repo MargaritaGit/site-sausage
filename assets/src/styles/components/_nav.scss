@@ -85,8 +85,8 @@
             transition: 0.3s;
 
             position: absolute;
-            top: calc(5.5rem);
-            left: calc(5% + 2% + 0.75rem);
+            top: 4.5rem;
+            left: calc(5% + 2% + 0.75rem); // 5% - как у обычной, 2% - wrapper, 0.75rem - разница в ширине иконок
             z-index: -1;
 
             &:hover {
