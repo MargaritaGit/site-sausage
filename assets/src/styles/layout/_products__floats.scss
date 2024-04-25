@@ -27,10 +27,10 @@
         position: absolute;
         z-index: -1;
 
-
         &_1 {
             top: -10rem;
             left: 0;
+            // // rotate: 235deg; // should not use rotate here!! - because rellax.js translates tis element - and if we rotate before translating, the translation will be along the new axis of rotation!
         }
 
         &_2 {
@@ -59,14 +59,16 @@
             background: url('../img/floats/u-sausage.png') no-repeat;
             background-position: center;
             background-size: 70%;
-            transform: rotate(235deg);
+            // transform: rotate(235deg); // don't work due conflict with parallax.js
+            rotate: 235deg; // works fine with outer libraries (like), that specify inline transform style
         }
 
         &_2 {
             background: url('../img/floats/sausages-cartoon.png') no-repeat;
             background-position: center;
             background-size: 100%;
-            transform: rotate(-45deg);
+            rotate: -45deg;
+
 
         }
 
@@ -74,7 +76,7 @@
             background: url('../img/floats/sausages-cartoon.png') no-repeat;
             background-position: center;
             background-size: 100%;
-            transform: rotate(15deg);
+            rotate: 15deg;
 
         }
 
@@ -82,8 +84,7 @@
             background: url('../img/floats/sausage-real-slice.png') no-repeat;
             background-position: center;
             background-size: 70%;
-            transform: rotate(45deg);
-
+            rotate: 45deg;
         }
 
     }

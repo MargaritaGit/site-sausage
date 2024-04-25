@@ -1,9 +1,18 @@
-// window.Parallax = t();
-
-
 export const Parallax = t();
 
-// export function t() {
+// // Usage Parallax  - move items along with mouse pointer or device accelerometr
+
+// moves children of '.products__float' with attribute ' data-depth="1.5" '
+/* <div class="rellax products__float products__float_2" data-rellax-speed="3">
+                <div class=" products__circle products__circle_2" data-depth="-1"></div>
+            </div> */
+
+// const floats = document.querySelectorAll('.products__float');
+
+// for (let float of floats) {
+//     new Parallax(float);
+// }
+
 function t() {
     return function t(e, i, n) {
         function o(r, a) {
@@ -523,4 +532,3 @@ function t() {
         }]
     }, {}, [5])(5)
 }
-//# sourceMappingURL=parallax.min.js.map

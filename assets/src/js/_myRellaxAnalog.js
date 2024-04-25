@@ -18,6 +18,7 @@ export function myRellax(elements = '.rellax, .horellax') {
         // setInterval(() =>  console.log(window.scrollY), 1000);
     }
 
+    // actually the function to move units
     function biasUnits(units) {
         for (let unit of units) {
             // use Math.sqrt() instead Math.sin() !
