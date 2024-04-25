@@ -5,6 +5,14 @@ import { linksOnPageJustScroll } from "./_linksJustScroll";
 import { productsFlyInEffect } from "./_products_fx";
 import { myRellax } from "./_myRellaxAnalog";
 
+// import { t } from "./_parallax_my_edit";
+import { Parallax } from "./_parallax_my_edit";
+const floats = document.querySelectorAll('.products__float');
+for (let float of floats) {
+    new Parallax(float);
+}
+
+
 // задаём высоту псевдоэлемента с фикс.фоном для устойств, не поддерживающих еденицы измерения lvh - Largest Viewport Height
 
 // document.querySelector(':root').style = `--screenHeight: 100%`
@@ -27,6 +35,16 @@ productsFlyInEffect('transform 0.65s ease-in-out, opacity 0.65s ease-in-out');
 
 // if (window.innerWidth >= 768) {
 myRellax();
+// }
+
+
+// window.Parallax = t();
+// window.Parallax = Parallax();
+
+// console.log(window.Parallax);
+// const floats = document.querySelectorAll('.products__float');
+// for (let float of floats) {
+//     new window.Parallax(float);
 // }
 
 

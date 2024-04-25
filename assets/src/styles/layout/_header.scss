@@ -1,8 +1,13 @@
 .header {
     height: 50vh;
-    min-height: 50rem;
+    min-height: 41rem;
     position: relative;
     // margin-bottom: 7rem;
+
+
+    @media ($mobileL) {
+        min-height: 50rem;
+    }
 
     @media ($laptop) {
         height: 100vh;

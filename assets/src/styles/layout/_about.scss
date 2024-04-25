@@ -28,7 +28,11 @@
     }
 
     &__wrapper {
-        padding: 3rem 0;
+        padding: 2rem 0;
+
+        @media ($tablet) {
+            padding: 3rem 0;
+        }
     }
 
     &__container {

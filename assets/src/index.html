@@ -164,14 +164,20 @@
                 <div class=" products__circle products__circle_2" data-depth="1"></div>
             </div>
 
-            <div class="rellax products__float products__float_3" id="scene1" data-rellax-speed="6">
+            <div class="rellax products__float products__float_3" id="scene1" data-rellax-speed="5">
                 <div class=" products__circle products__circle_3" data-depth="-1"></div>
             </div>
 
             <div class="rellax products__float products__float_4" id="scene1" data-rellax-speed="10">
                 <div class=" products__circle products__circle_4" data-depth="-1"></div>
             </div>
+
+            <!-- <script src="./js/js-libs/parallax.min.js"></script> -->
+            <!-- <script src="./js/parallax.min.js"></script> -->
+
+
         </div>
+
     </section>
 
 
@@ -220,6 +226,18 @@
 
     <!-- <script src="./js/_sliderHeader.js"></script> -->
     <script src="./js/index.js"></script>
+
+
+
+    <script>
+
+        console.log(window.Parallax);
+
+        const floats = document.querySelectorAll('.products__float');
+        for (let float of floats) {
+            new window.Parallax(float);
+        }
+    </script>
 </body>
 
 </html>
