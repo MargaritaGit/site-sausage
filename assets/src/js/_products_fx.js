@@ -51,7 +51,7 @@ export function productsFlyInEffect(transitionType) {
             }
         });
 
-    }, { threshold: [0, 0.15, 0.2, 0.5] });
+    }, { threshold: [0, 0.15, 0.2] });
 
 
     // start observing lines with content

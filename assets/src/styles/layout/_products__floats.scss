@@ -12,39 +12,76 @@
 
         opacity: 0.5;
 
+        &::after {
+            content: '';
+            background-image: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.2) 5%,
+                    rgba(255, 255, 255, 0.5) 40%,
+                    rgba(255, 255, 255, 0.5) 60%,
+                    rgba(255, 255, 255, 0.2) 95%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
         @media ($tablet) {
             opacity: 0.7;
         }
 
         @media ($laptop) {
-            opacity: 0.9;
-            opacity: 1;
+            opacity: 0.8;
+            // opacity: 1;
+
+
         }
     }
 
 
     &__float {
         position: absolute;
-        z-index: -1;
+        // z-index: -1;  
 
         &_1 {
             top: -10rem;
-            left: 0;
+            left: 0rem;
             // // rotate: 235deg; // should not use rotate here!! - because rellax.js translates tis element - and if we rotate before translating, the translation will be along the new axis of rotation!
         }
 
         &_2 {
             top: 50rem;
-            right: 2vw;
+            right: 6vw;
         }
 
         &_3 {
-            top: 115rem;
-            left: 3vw;
+            top: 85rem;
+            left: 6vw;
         }
 
         &_4 {
-            top: 145rem;
+            top: 70rem;
+            right: -1vw;
+        }
+
+        &_5 {
+            top: 70rem;
+            left: 0vw;
+        }
+
+        &_6 {
+            top: 120rem;
+            right: 8vw;
+        }
+
+        &_7 {
+            top: 165rem;
+            left: 6vw;
+        }
+
+        &_8 {
+            top: 215rem;
             right: 3vw;
         }
     }
@@ -73,14 +110,42 @@
         }
 
         &_3 {
-            background: url('../img/floats/sausages-cartoon.png') no-repeat;
+            background: url('../img/floats/sausage-var-slice.png') no-repeat;
             background-position: center;
             background-size: 100%;
-            rotate: 15deg;
+            rotate: 0deg;
 
         }
 
         &_4 {
+            background: url('../img/floats/sausage-pk-slice.png') no-repeat;
+            background-position: center;
+            background-size: 70%;
+            rotate: -25deg;
+        }
+
+        &_5 {
+            background: url('../img/floats/sausage-sk-slice.png') no-repeat;
+            background-position: center;
+            background-size: 90%;
+            rotate: 0deg;
+        }
+
+        &_6 {
+            background: url('../img/floats/ham.png') no-repeat;
+            background-position: center;
+            background-size: 90%;
+            rotate: 0deg;
+        }
+
+        &_7 {
+            background: url('../img/floats/sausages.png') no-repeat;
+            background-position: center;
+            background-size: 90%;
+            rotate: -75deg;
+        }
+
+        &_8 {
             background: url('../img/floats/sausage-real-slice.png') no-repeat;
             background-position: center;
             background-size: 70%;
