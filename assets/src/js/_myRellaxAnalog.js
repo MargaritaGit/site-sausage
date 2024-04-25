@@ -4,6 +4,27 @@ export function myRellax(elements = '.rellax, .horellax') {
 
     translateOnScroll(elements);
 
+    function translateOnScroll(elements) {
+        biasedUnits = document.querySelectorAll(elements);
+
+        setSpeedCoeff();
+
+        // console.log(biasedUnits);
+        window.addEventListener('scroll', () => biasUnits(biasedUnits));
+
+        window.addEventListener('load', () => biasUnits(biasedUnits), { once: true });
+
+        // смотрим - не меняется ли позиция значение window.scrollY при появлении/скрытии address-bar в мобильных браузерах
+        // setInterval(() =>  console.log(window.scrollY), 1000);
+    }
+
+    function biasUnits(units) {
+        for (let unit of units) {
+            // use Math.sqrt() instead Math.sin() !
+            unit.style.transform = `translate3d(${(-Math.sin(1.55 * unit.horSpeedCoeff / 30) * window.scrollY) * 1.4}px, ${(-Math.sin(1.55 * unit.speedCoeff / 10) * window.scrollY) * 0.4}px, 0)`;
+        }
+    }
+
     function setSpeedCoeff() {
         // biasedUnits = document.querySelectorAll(array);
         for (let el of biasedUnits) {
@@ -57,29 +78,6 @@ export function myRellax(elements = '.rellax, .horellax') {
             // console.log(el);
         }
     }
-
-    function translateOnScroll(arrays) {
-        biasedUnits = document.querySelectorAll(arrays);
-
-        setSpeedCoeff();
-
-        window.onscroll = () => {
-            // console.warn('window.onscroll');
-            // console.log(biasedUnits)
-
-
-            for (let el of biasedUnits) {
-                // Math.sqrt()
-                el.style.transform = `translate3d(${(-Math.sin(1.55 * el.horSpeedCoeff / 30) * window.scrollY) * 1.4}px, ${(-Math.sin(1.55 * el.speedCoeff / 10) * window.scrollY) * 0.4}px, 0)`;
-            }
-        }
-
-        // смотрим - не меняется ли позиция значение window.scrollY при появлении/скрытии address-bar в мобильных браузерах
-        // setInterval(() => {
-        //     console.log(window.scrollY)
-        // }, 1000);
-    }
-
 
     window.addEventListener('resize', setSpeedCoeff);
 
