@@ -21,7 +21,7 @@
 
     &__card {
         flex-shrink: 0;
-        width: 30rem;
+        width: 30.6rem;
         font-size: 1.55rem;
         border: 0.1rem solid lighten($color: $textColor, $amount: 15%);
         padding: 2rem;
@@ -30,7 +30,7 @@
         // border-radius: 0.5rem;
 
         @media ($tablet) {
-            min-width: 35rem;
+            width: 35rem;
             font-size: 1.8rem;
 
             &:hover {

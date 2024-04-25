@@ -1,9 +1,14 @@
 .footer {
     // height: 40rem;
     background-color: darken($color: $bgColor, $amount: 15);
-    padding: 5rem 0 2rem;
+    padding: 2rem 0 2rem;
     font-size: 1.7rem;
     color: $menuTextColor;
+
+    @media ($tablet) {
+        padding: 5rem 0 2rem;
+
+    }
 
     &__wrapper {
 
@@ -12,11 +17,12 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        // align-items: center;
         text-align: center;
 
         @media ($tablet) {
             text-align: left;
-            max-height: 16rem;
+            height: 16rem;
             flex-wrap: wrap;
             align-items: flex-start;
 
@@ -29,22 +35,34 @@
         }
 
         & .logo-cont {
-
-            width: 20rem;
-            display: none;
+            align-self: center;
+            // display: none;
+            margin-bottom: 2.5rem;
 
             @media ($tablet) {
-                display: block;
+                // display: block;
+                width: 20rem;
+
             }
 
             & .logo {
-                transform: scale(0.5) translate(-50%, -65%);
-                margin-bottom: calc((-11.4rem * 0.5) + 1.5rem);
+                transform: scale(0.5) translate(7%, 0);
+
+                @media ($tablet) {
+                    transform: scale(0.5) translate(-50%, -65%);
+                    margin-bottom: calc((-11.4rem * 0.5) + 1.5rem);
+                }
+
+                @media ($laptop) {
+                    transform: scale(0.5) translate(-50%, -90%);
+                    margin-bottom: calc((-11.4rem * 0.5) + 0.5rem);
+                }
             }
 
             & .logo__text {
                 font-size: 1.55rem;
                 color: darken($color: $menuTextColor, $amount: 10);
+                // text-align: center;
             }
         }
 
@@ -81,21 +99,21 @@
 
             &__vk {
                 display: block;
-                margin-top: 1.5rem;
+                margin-top: 1.7rem;
                 color: white;
                 font-size: 2.5rem;
                 margin-bottom: 2.5rem;
                 transition: 0.2s;
 
-                @media ($tablet) {
-                    margin-bottom: 2rem;
+                // @media ($tablet) {
+                //     margin-bottom: 0rem;
 
-                }
+                // }
 
-                @media ($laptop) {
-                    margin-bottom: 0;
+                // @media ($laptop) {
+                //     margin-bottom: 0;
 
-                }
+                // }
 
                 &:hover {
                     color: darken($color: $menuTextColor, $amount: 15%);
@@ -110,7 +128,7 @@
             & span {
                 display: inline-block;
                 // font-size: 2rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
                 margin-left: 4rem;
                 position: relative;
                 transition: 0.2s;
@@ -232,8 +250,13 @@
         color: darken($color: $menuTextColor, $amount: 10);
         text-align: center;
 
-        @media ($laptop) {
+        @media ($tablet) {
             margin-top: 5rem;
+
+        }
+
+        @media ($laptop) {
+            margin-top: 2rem;
 
         }
     }

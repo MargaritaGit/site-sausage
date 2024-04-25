@@ -40,7 +40,11 @@
     }
 
     &::before {
-        content: '\2191';
+        // content: '\2191'; // CSS
+        content: '\f062';
+        font-family: 'Font Awesome 6 Free';
+        font-size: 2rem;
+        font-weight: 700;
         position: absolute;
         color: white;
         font-size: 3.5rem;
