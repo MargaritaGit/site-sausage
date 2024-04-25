@@ -16,7 +16,7 @@
 
         @media ($tablet) {
             text-align: left;
-            height: 15rem;
+            max-height: 16rem;
             flex-wrap: wrap;
             align-items: flex-start;
 
@@ -88,6 +88,11 @@
                 transition: 0.2s;
 
                 @media ($tablet) {
+                    margin-bottom: 2rem;
+
+                }
+
+                @media ($laptop) {
                     margin-bottom: 0;
 
                 }
@@ -114,6 +119,10 @@
 
 
                 @media ($tablet) {
+                    margin-bottom: 2.3rem;
+                }
+
+                @media ($laptop) {
                     margin-bottom: 2.3rem;
                 }
 
@@ -163,6 +172,10 @@
             flex-direction: column;
             // text-align: center;
 
+            @media ($tablet) {
+                gap: 2.5rem;
+            }
+
             @media ($laptop) {
                 flex-direction: row;
 
@@ -178,6 +191,7 @@
 
                 @media ($tablet) {
                     align-items: flex-start;
+                    gap: 2.5rem;
 
                 }
 
@@ -213,10 +227,15 @@
     }
 
     & .copyright {
-        margin-top: 3rem;
+        margin-top: 4rem;
         font-size: 1.4;
         color: darken($color: $menuTextColor, $amount: 10);
         text-align: center;
+
+        @media ($laptop) {
+            margin-top: 5rem;
+
+        }
     }
 
 }
