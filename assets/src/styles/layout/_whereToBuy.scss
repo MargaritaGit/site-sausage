@@ -13,9 +13,31 @@
         gap: 3rem;
         flex-direction: column;
 
-        @media ($laptopM) {
+        overflow: hidden;
+        height: 57rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding: 1rem;
+        transition: height 0.3s;
+
+
+        @media (min-width: 1180px) {
             flex-direction: row;
             justify-content: space-between;
+
+            flex-wrap: wrap;
+            height: 18rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        &_unfold {
+            // height: var(--unfoldHeight);
+            height: 112rem;
+
+            @media (min-width: 1180px) {
+                height: 38rem;
+            }
         }
     }
 
