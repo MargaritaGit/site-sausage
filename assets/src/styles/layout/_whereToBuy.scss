@@ -33,10 +33,13 @@
 
         &_unfold {
             // height: var(--unfoldHeight);
-            height: 112rem;
+            // height: 114rem;
+            height: fit-content;
+
 
             @media (min-width: 1180px) {
-                height: 38rem;
+                // height: 38rem;
+                height: fit-content;
             }
         }
     }

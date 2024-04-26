@@ -7,10 +7,56 @@ export function unfoldElement() {
     let unfoldHeight;
 
     btn.onclick = () => {
+        if (cardsCont.classList.contains('whereToBuy__cards_unfold')) {
+            console.log('has');
 
+            // cardsCont.style.transition = 'unset';
+            // cardsCont.style.height = 'fit-content';
+            // console.log('fit-content');
+            // unfoldHeight = cardsCont.offsetHeight;
+            // console.log(unfoldHeight);
+
+
+            // cardsCont.classList.remove('whereToBuy__cards_unfold');
+            // cardsCont.style.transition = 'height 0.5s';
+
+            // setTimeout(() => {
+            //     cardsCont.style.height = null;
+            // }, 1000);
+
+
+
+
+
+            cardsCont.classList.remove('whereToBuy__cards_unfold');
+
+            return
+        }
+
+        cardsCont.style.transition = 'unset';
+        cardsCont.style.height = 'fit-content';
+
+        unfoldHeight = cardsCont.offsetHeight;
+        console.log(unfoldHeight);
+
+        cardsCont.style.height = null;
+
+
+        cardsCont.style.transition = 'height 0.5s';
         setTimeout(() => {
-            cardsCont.classList.toggle('whereToBuy__cards_unfold')
+            cardsCont.style.height = `${unfoldHeight * 1}px`;
+
+            cardsCont.addEventListener('transitionend', () => {
+                cardsCont.style.height = null;
+                cardsCont.classList.toggle('whereToBuy__cards_unfold')
+            }, { once: true });
         }, 0);
+
+
+
+        // setTimeout(() => {
+        //     cardsCont.classList.toggle('whereToBuy__cards_unfold')
+        // }, 0);
     }
 
 
