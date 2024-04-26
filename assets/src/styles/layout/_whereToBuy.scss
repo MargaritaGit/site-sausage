@@ -18,7 +18,7 @@
         padding-top: 1rem;
         padding-bottom: 1rem;
         padding: 1rem;
-        transition: height 0.3s;
+        // transition: height 0.3s; // присваиваем JS-ом
 
 
         @media (min-width: 1180px) {
@@ -32,7 +32,6 @@
         }
 
         &_unfold {
-            // height: var(--unfoldHeight);
             // height: 114rem;
             height: fit-content;
 
@@ -77,7 +76,8 @@
 
     &__btn {
         display: block;
-        width: fit-content;
+        // width: fit-content;
+        width: 20rem;
         padding: 1.2rem 2.4rem;
         background-color: darken($color: $bgColor, $amount: 7);
         margin: 4rem auto 0;

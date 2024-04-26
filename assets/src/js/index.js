@@ -5,7 +5,7 @@ import { linksOnPageJustScroll } from "./_linksJustScroll";
 import { productsFlyInEffect } from "./_products_fx";
 import { myRellax } from "./_myRellaxAnalog";
 import { Parallax } from "./_parallax_my_edit";
-import { unfoldElement } from "./_unfoldElement";
+import { unfoldContainer } from "./_unfoldContainer";
 
 
 
@@ -44,4 +44,4 @@ if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
     console.log(false, `matchMedia('(hover: hover) and (pointer: fine)').matches`)
 }
 
-unfoldElement();
+unfoldContainer('height 0.5s', '.whereToBuy__cards', '.whereToBuy__btn', 'Свернуть');

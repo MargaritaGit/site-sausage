@@ -33,7 +33,7 @@ export function toggleMobileMenu() {
         }
     }
 
-    // устанавливаем задерку анимации (чтобы не писать вручную через CSS)
+    // устанавливаем задержку анимации (чтобы не писать вручную через CSS)
     const menuItems = menu.querySelectorAll('.nav-list__item');
     menuItems.forEach((menuItem, i) => {
         // console.log(menuItem);
