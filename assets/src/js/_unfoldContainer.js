@@ -36,7 +36,9 @@ export function unfoldContainer(transition = 'height 0.5s', containerQuerSel, bt
                 // убираем transition после завершения анимации - чтобы не анимировалось при window.resize
                 container.addEventListener('transitionend', () => {
                     container.style.transition = 'unset';
+
                     toggleBtn();
+                    container.scrollIntoView({ behavior: 'smooth' });
                 }, { once: true });
             }, 0);
 
