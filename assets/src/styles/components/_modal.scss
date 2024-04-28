@@ -1,0 +1,164 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparentize($color: $menuTextColor, $amount: 0.1);
+    z-index: 2;
+    padding-top: 25vh;
+
+    display: none;
+
+
+
+    &__title {
+        @include h2($menuTextColor);
+    }
+
+    &__content {
+        // width: 100%;
+        // height: 100%;
+        width: 30rem;
+        height: min-content;
+        margin: auto;
+
+
+        background-color: darken($color: $bgColor, $amount: 15);
+        padding: 2rem 2rem 2rem;
+        color: $menuTextColor;
+        // padding-top: 25vh;
+
+        @media ($mobileM) {
+            width: 35rem;
+            padding: 1rem 4rem 2rem;
+
+        }
+
+        @media ($mobileL) {
+            width: 40rem;
+        }
+
+        @media ($tablet) {
+            width: 50rem;
+            height: min-content;
+            margin: auto;
+        }
+
+        & p {
+            margin-bottom: 2rem;
+        }
+
+        & a {
+            display: inline-block;
+            font-size: 2rem;
+            color: $menuTextColor;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            // text-decoration: underline;
+            cursor: pointer;
+            transition: 0.2s;
+            // position: relative;
+
+
+
+            &.modal__phone::before {
+                content: '\f095';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 700;
+                font-size: 2rem;
+                margin-right: 0.5rem;
+
+                @media ($mobileL) {
+                    font-size: 2.3rem;
+                }
+
+                @media ($tablet) {
+                    font-size: 2.6rem;
+                }
+            }
+
+            &.modal__mail {
+                position: relative;
+                margin-left: 3rem;
+
+                @media ($mobileM) {
+                    margin-left: 4rem;
+
+                }
+
+                @media ($tablet) {
+                    margin-left: 5rem;
+
+                }
+
+                &::before {
+                    content: '\f0e0';
+                    // font-family: 'FontAwesome'; // НЕВЕРНО - не работает font-weight. жирный конвертик
+                    font-family: 'Font Awesome 6 Free';
+                    font-size: 2.5rem;
+                    font-weight: 400;
+                    font-style: normal;
+                    // margin-right: 1rem;
+                    position: absolute;
+                    top: 0rem;
+                    left: -3rem;
+
+                    @media ($mobileM) {
+                        font-size: 2.7rem;
+                        top: -0.4rem;
+                        left: -4rem;
+                    }
+
+                    @media ($mobileL) {
+                        font-size: 3rem;
+                        top: -0.1rem;
+                    }
+
+                    @media ($tablet) {
+                        font-size: 3.5rem;
+                        top: -0.2rem;
+                        left: -5rem;
+                    }
+
+                }
+            }
+
+            &:hover {
+                color: darken($color: $menuTextColor, $amount: 15%);
+                // text-decoration: none;
+            }
+
+            @media ($mobileL) {
+                font-size: 2.5rem;
+
+            }
+        }
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+    }
+
+    &__close {
+        width: 4rem;
+        height: 4rem;
+        // background-color: red;
+        background-image: url("../icons/cross.svg");
+        background-size: 100%;
+
+        position: absolute;
+        top: 4rem;
+        right: 5rem;
+        z-index: 2;
+
+        &:hover {
+            cursor: pointer;
+            filter: saturate(3);
+            transform: scale(1.1);
+        }
+    }
+}

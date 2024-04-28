@@ -191,7 +191,7 @@
             // text-align: center;
 
             @media ($tablet) {
-                gap: 2.5rem;
+                gap: 2.6rem;
             }
 
             @media ($laptop) {
@@ -209,8 +209,12 @@
 
                 @media ($tablet) {
                     align-items: flex-start;
-                    gap: 2.5rem;
+                    gap: 2.6rem;
 
+                }
+
+                @media ($laptop) {
+                    gap: 2.5rem;
                 }
 
                 &__item {
