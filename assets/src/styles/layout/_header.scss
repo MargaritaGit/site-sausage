@@ -6,7 +6,9 @@
 
 
     @media ($mobileL) {
-        min-height: 70rem;
+        height: 75vh;
+        min-height: 50rem;
+
     }
 
     @media ($laptop) {
