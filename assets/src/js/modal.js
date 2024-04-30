@@ -10,6 +10,8 @@ for (const coop of coopArr) {
     coop.onclick = (e) => {
         modal.style.display = "flex";
         modal.addEventListener('click', closeModal);
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
 
     }
 }
@@ -37,6 +39,7 @@ function closeModal(e) {
     console.log(e.target);
     console.log(e.currentTarget);
 
+
     if (e.target === e.currentTarget || e.target === closeModalBtn) {
         modalContent.classList.remove('scale-up-center');
         modalContent.classList.add('scale-down-center');
@@ -62,6 +65,8 @@ function closeModal(e) {
             modal.removeEventListener('click', closeModal);
         }, { once: true });
     }
+
+    document.body.style.overflow = 'visible';
 
 }
 
