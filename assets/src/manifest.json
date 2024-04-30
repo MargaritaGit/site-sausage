@@ -1,0 +1,17 @@
+{
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./icons/apple-touch-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
