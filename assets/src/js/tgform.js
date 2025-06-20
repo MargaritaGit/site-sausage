@@ -1,9 +1,11 @@
+'use strict';
+
 import { closeModal, closeModalBtn } from './modal';
 
 const tgform = document.querySelector('.tgform');
 console.log(tgform);
 
-async function formSubmit(event) {
+async function formSubmitUnSafeFrontEnd(event) {
   event.preventDefault();
   console.log(event);
 
@@ -47,4 +49,75 @@ async function formSubmit(event) {
   closeModal({ target: closeModalBtn });
 }
 
-tgform.addEventListener('submit', formSubmit);
+async function formSubmitSafeBackEnd(event) {
+  event.preventDefault();
+  console.log(event);
+
+  const formData = [];
+
+  formData.push(this.name.value);
+  formData.push(this.tel.value);
+
+  const response = await fetch(
+    'http://u995982r.beget.tech/for-site-sausage-token/index.php',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(formData),
+    }
+  );
+  console.log('response', response);
+
+  const data = await response.json();
+  console.log('data', data);
+
+  if (data.ok) {
+    alert(`${this.name.value}, ваш запрос отправлен!`);
+  } else {
+    alert(`Произошла ошибка! \n\nЗапрос не отправлен.`);
+  }
+
+  tgform.reset();
+  closeModal({ target: closeModalBtn });
+}
+
+tgform.addEventListener('submit', formSubmitSafeBackEnd);
+
+/**
+ * async function formSubmitSafeBackEnd(event) {
+  event.preventDefault();
+  console.log(event);
+
+  const formData = [];
+
+  formData.push(this.name.value);
+  formData.push(this.tel.value);
+
+  const response = await fetch(
+    'http://u995982r.beget.tech/for-site-sausage-token/index.php',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  console.log('response', response);
+
+  const data = await response.json();
+  console.log('data', data);
+
+  if (data.ok) {
+    alert(`${this.name.value}, ваш запрос отправлен!`);
+  } else {
+    alert(`Произошла ошибка! \n\nЗапрос не отправлен.`);
+  }
+
+  tgform.reset();
+  closeModal({ target: closeModalBtn });
+}
+
+ */
