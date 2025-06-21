@@ -436,6 +436,7 @@
             id=""
             placeholder="Имя"
             class="tgform__input"
+            autocomplete="on"
           />
           <input
             type="tel"
@@ -443,7 +444,21 @@
             id=""
             placeholder="Телефон"
             class="tgform__input"
+            autocomplete="on"
           />
+
+          <p>
+            * Перед отправкой подтвердите, что вы человек - перейдите по ссылке
+            и и нажмите кнопку "Request temporary access to the demo server" -
+            <a
+              href="https://cors-anywhere.herokuapp.com/corsdemo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Подтвердить</a
+            >
+          </p>
+
           <button class="btn tgform__btn" type="submit">Отправить</button>
         </form>
       </div>
