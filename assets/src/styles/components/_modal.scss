@@ -157,16 +157,42 @@
     }
   }
 
+  & .modal__form-title {
+    color: $white;
+    margin-top: 1rem;
+  }
+
   & .tgform {
+    margin: auto;
     margin-top: 1rem;
 
-    input {
-      padding: 1rem;
+    max-width: 18rem;
+
+    @media ($mobileL) {
+      max-width: 100%;
     }
 
-    button {
-      background-color: $white;
+    .tgform__input {
+      margin-top: 1rem;
       padding: 1rem;
+      font-size: 1.6rem;
+      width: 18rem;
+
+      @media ($tablet) {
+        margin-top: 0;
+      }
+    }
+
+    .tgform__btn {
+      background-color: $white;
+      margin-top: 1rem;
+      padding: 1rem;
+      font-size: 1.6rem;
+      color: $black;
+
+      @media ($tablet) {
+        margin-top: 0;
+      }
     }
   }
 

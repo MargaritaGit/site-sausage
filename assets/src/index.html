@@ -23,6 +23,9 @@
     <!-- <link rel="manifest" href="./manifest.json"> -->
 
     <script src="./js/index.js" defer></script>
+    <script src="./js/modal.js" defer></script>
+    <script src="./js/tgform.js" defer></script>
+    <!-- <script src="./js/tgform-frontend-unsafe.js" defer></script> -->
   </head>
 
   <body>
@@ -425,10 +428,23 @@
           >
         </p>
 
+        <h4 class="modal__form-title">Запросить звонок</h4>
         <form class="tgform">
-          <input type="text" name="name" id="" placeholder="Имя" />
-          <input type="tel" name="tel" id="" placeholder="Телефон" />
-          <button class="btn" type="submit">Запросить звонок</button>
+          <input
+            type="text"
+            name="name"
+            id=""
+            placeholder="Имя"
+            class="tgform__input"
+          />
+          <input
+            type="tel"
+            name="tel"
+            id=""
+            placeholder="Телефон"
+            class="tgform__input"
+          />
+          <button class="btn tgform__btn" type="submit">Отправить</button>
         </form>
       </div>
 
@@ -436,10 +452,5 @@
     </div>
 
     <div class="button_up" id="btn_up"></div>
-
-    <!-- <script src="./js/index.js"></script> -->
-    <script src="./js/modal.js"></script>
-
-    <script src="./js/tgform.js"></script>
   </body>
 </html>

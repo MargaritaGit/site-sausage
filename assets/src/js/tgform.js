@@ -3,75 +3,44 @@
 import { closeModal, closeModalBtn } from './modal';
 
 const tgform = document.querySelector('.tgform');
-console.log(tgform);
-
-async function formSubmitUnSafeFrontEnd(event) {
-  event.preventDefault();
-  console.log(event);
-
-  const TOKEN = '';
-
-  const CHAT_ID = '639542300';
-  const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-
-  const message = `
-  Заявку на сайте заполнил:
-  Имя: <b>${this.name.value}</b>
-  Телефон: <b>${this.tel.value}</b>
-  `;
-
-  console.log(message);
-
-  const response = await fetch(URI_API, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text: message,
-      parse_mode: 'html',
-    }),
-  });
-
-  console.log('response', response);
-
-  const data = await response.json();
-  console.log('data', data);
-
-  if (data.ok) {
-    alert(`${this.name.value}, ваш запрос отправлен!`);
-  } else {
-    alert(`Произошла ошибка! \n\nЗапрос не отправлен.`);
-  }
-
-  tgform.reset();
-  closeModal({ target: closeModalBtn });
-}
+// console.log(tgform);
 
 async function formSubmitSafeBackEnd(event) {
   event.preventDefault();
-  console.log(event);
+  // console.log(event);
+
+  const userName = this.name.value;
+  const userTel = this.tel.value;
+
+  if (!userName || !userTel) {
+    alert('Запрос не отправлен! \n\nВведите Имя и Телефон.');
+    return;
+  }
 
   const formData = [];
 
-  formData.push(this.name.value);
-  formData.push(this.tel.value);
+  formData.push(userName);
+  formData.push(userTel);
 
+  // https://cors-anywhere.herokuapp.com/ - бесплатный или собственный HTTPS-прокси, чтобы избежать ошибки Mixed Content: запрос с https (github) на http (бесплатный хостинг для бекенда)
   const response = await fetch(
-    'http://u995982r.beget.tech/for-site-sausage-token/index.php',
+    'https://cors-anywhere.herokuapp.com/' +
+      'http://u995982r.beget.tech/for-site-sausage-token/senderToTgBot.php',
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
+        // 'Content-Type': 'application/json', //! Cause Error: Access to fetch at '....' from origin '....' has been blocked by CORS policy: Response to preflight request doesn't pass access control che
+
+        'X-Requested-With': 'XMLHttpRequest', // Нужно для CORS Anywhere
       },
       body: JSON.stringify(formData),
     }
   );
-  console.log('response', response);
+  // console.log('response', response);
 
   const data = await response.json();
-  console.log('data', data);
+  // console.log('data', data);
 
   if (data.ok) {
     alert(`${this.name.value}, ваш запрос отправлен!`);
@@ -85,39 +54,7 @@ async function formSubmitSafeBackEnd(event) {
 
 tgform.addEventListener('submit', formSubmitSafeBackEnd);
 
-/**
- * async function formSubmitSafeBackEnd(event) {
-  event.preventDefault();
-  console.log(event);
-
-  const formData = [];
-
-  formData.push(this.name.value);
-  formData.push(this.tel.value);
-
-  const response = await fetch(
-    'http://u995982r.beget.tech/for-site-sausage-token/index.php',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: JSON.stringify(data),
-    }
-  );
-  console.log('response', response);
-
-  const data = await response.json();
-  console.log('data', data);
-
-  if (data.ok) {
-    alert(`${this.name.value}, ваш запрос отправлен!`);
-  } else {
-    alert(`Произошла ошибка! \n\nЗапрос не отправлен.`);
-  }
-
-  tgform.reset();
-  closeModal({ target: closeModalBtn });
-}
-
- */
+// todo:
+// 1. Add form validation
+// 2. Add errors handling (try..catch)
+// 3. Add CAPTCHA
