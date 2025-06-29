@@ -4,9 +4,18 @@ import { closeModal, closeModalBtn } from './modal';
 const tgform = document.querySelector('.tgform');
 // console.log(tgform);
 
+let formSubmitStatus = 'idle'; // 'idle' | 'pending' | 'success' | 'error'
+
 async function formSubmitSafeBackEnd(event) {
   event.preventDefault();
   // console.log(event);
+
+  console.log('formSubmitStatus:', formSubmitStatus);
+
+  if (formSubmitStatus === 'pending') {
+    console.warn('Data is still loading');
+    return;
+  }
 
   const userName = this.name.value;
   const userTel = this.tel.value;
@@ -34,6 +43,8 @@ async function formSubmitSafeBackEnd(event) {
     'http://u995982r.beget.tech/for-site-sausage-token/senderToTgBot.php';
 
   try {
+    formSubmitStatus = 'pending';
+
     const response = await fetch(proxyURL + BACKEND_URL, {
       method: 'POST',
       headers: {
@@ -65,13 +76,19 @@ async function formSubmitSafeBackEnd(event) {
     if (data.status === 'ok') {
       alert(`${userName}, ваш запрос отправлен!`);
     } else {
-      alert(`Произошла ошибка! \n\nЗапрос не отправлен.`); // ошибка отправки в тг боте
+      throw new Error(
+        `Произошла ошибка на сервере Telegram! \n\nЗапрос не отправлен.`
+      ); // ошибка отправки в тг боте
     }
+
+    formSubmitStatus = 'success';
 
     tgform.reset();
     closeModal({ target: closeModalBtn });
   } catch (error) {
-    console.log(error.message);
+    formSubmitStatus = 'error';
+
+    console.log(error.message.slice(0, 20));
     alert(error.message);
   }
 }
